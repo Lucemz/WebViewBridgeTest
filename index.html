@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebView Bridge Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>WebView Bridge Test</h1>
+    
+    <!-- Campo para enviar mensajes a la app -->
+    <div>
+        <input id="inputMessage" type="text" placeholder="Escribe un mensaje para la app" />
+        <button id="sendToApp">Enviar a la app</button>
+    </div>
+
+    <!-- Mostrar los mensajes enviados -->
+    <div>
+        <h2>Mensajes Enviados a la App</h2>
+        <div id="sentMessagesContainer"></div>
+    </div>
+
+    <!-- Mostrar los mensajes recibidos desde la app -->
+    <div>
+        <h2>Mensajes Recibidos de la App</h2>
+        <div id="receivedMessagesContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
