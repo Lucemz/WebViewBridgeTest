@@ -11,7 +11,6 @@ document.getElementById("sendToApp").addEventListener("click", () => {
     // Enviar mensaje a la app usando AndroidBridge
     if (typeof AndroidBridge !== "undefined") {
         AndroidBridge.handleMessage(message);
-
         // Mostrar el mensaje enviado
         const sentContainer = document.getElementById("sentMessagesContainer");
         const sentMessageElement = document.createElement("p");
@@ -28,10 +27,11 @@ document.getElementById("sendToApp").addEventListener("click", () => {
 // Escuchar mensajes desde la app nativa
 window.addEventListener("message", (event) => {
     console.log("Mensaje recibido de la app:", event.data);
-
+    alert("Mensaje llegado",event.data)
     // Mostrar el mensaje recibido
     const receivedContainer = document.getElementById("receivedMessagesContainer");
     const receivedMessageElement = document.createElement("p");
-    receivedMessageElement.textContent = `Mensaje de la app: ${event.data}`;
+    receivedMessageElement.textContent = `Mensaje de la app:`;
     receivedContainer.appendChild(receivedMessageElement);
+
 });
