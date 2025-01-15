@@ -20,6 +20,15 @@ document.getElementById("sendToApp").addEventListener("click", () => {
 
         // Limpiar el campo de entrada
         inputField.value = "";
+    } else if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.iosBridge) {
+        window.webkit.messageHandlers.iosBridge.postMessage(message);
+
+        const sentContainer = document.getElementById("sentMessagesContainer");
+        const sentMessageElement = document.createElement("p");
+        sentMessageElement.textContent = `Mensaje enviado a iOS: ${message}`;
+        sentContainer.appendChild(sentMessageElement);
+
+        inputField.value = "";
     } else {
         console.warn("AndroidBridge no está disponible");
     }
